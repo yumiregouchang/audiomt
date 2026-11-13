@@ -1,0 +1,3 @@
+- name: gain_down_6
+  ops: [{op: gain, db: -6}]
+  rationale: The same sound recorded farther from the microphone
