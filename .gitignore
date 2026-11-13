@@ -1,0 +1,9 @@
+data/
+results/
+.env
+*.wav
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
