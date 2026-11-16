@@ -83,6 +83,6 @@ pytest -q -m "not slow"    # "slow" tests need torch or downloads
 ESC-50: K. J. Piczak, *ESC: Dataset for Environmental Sound Classification*, ACM Multimedia 2015.
 Licensed CC BY-NC 3.0 (ESC-10 subset CC BY 3.0). The dataset is downloaded by the user, never redistributed.
 
-Code licence: to be decided.
+Code licence: MIT, see [LICENSE](LICENSE).
 
 Developed as part of a bachelor's thesis in software engineering at Tampere University.
