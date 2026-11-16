@@ -1,0 +1,17 @@
+# audiomt experiment settings. Command-line options override these values.
+# Relative paths are relative to the folder you run audiomt from (the repo root).
+
+# ESC-50 folder. Either run `audiomt download`, or point this at an existing copy, e.g.
+#   data_dir: C:/Users/<you>/thesis/thesis-env-setup/topicA/data/ESC-50
+data_dir: C:/Users/Nickle/thesis/thesis-env-setup/topicA/data/ESC-50
+subset: esc50          # esc50 = all 50 classes; esc10 = the 10-class subset
+per_fold: 0            # clips per class per fold; 0 = all 8. Use 1-2 for a quick smoke run
+results_dir: results   # results and the feature cache (git-ignored)
+seed: 0
+
+models: [mfcc_svm, ast_logreg]
+
+ast:
+  model_id: MIT/ast-finetuned-audioset-10-10-0.4593   # lighter: MIT/ast-finetuned-audioset-16-16-0.442
+  batch_size: 8
+  device: auto         # auto, cpu or cuda

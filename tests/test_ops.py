@@ -7,7 +7,8 @@ from audiomt.spec import operation_catalog, parse_llm_reply
 
 SR = 22050
 rng = np.random.default_rng(1)
-Y = (0.3 * np.sin(2 * np.pi * 440 * np.arange(SR * 2) / SR) + 0.01 * rng.normal(size=SR * 2)).astype("float32")
+T = np.arange(SR * 2) / SR
+Y = (0.3 * np.sin(2 * np.pi * 440 * T) + 0.01 * rng.normal(size=SR * 2)).astype("float32")
 
 
 def mid(p):

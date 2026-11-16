@@ -6,10 +6,13 @@ build-backend = "setuptools.build_meta"
 name = "audiomt"
 version = "0.1.0"
 description = "LLM-assisted metamorphic testing of audio classification models"
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "numpy",
     "scipy",
+    "pandas",
+    "scikit-learn",
     "librosa>=0.10.2",
     "soundfile",
     "pydantic>=2",
@@ -17,15 +20,24 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+ast = ["torch", "transformers"]
 dev = ["pytest", "hypothesis", "ruff"]
+
+[project.scripts]
+audiomt = "audiomt.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-markers = ["slow: needs model downloads or the dataset; skipped in CI"]
+markers = ["slow: needs model downloads, torch or the dataset; skipped in CI"]
 filterwarnings = ["ignore::FutureWarning"]
 
 [tool.ruff]
 line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+# Explicit rule set, so a new ruff release cannot change what CI checks.
+select = ["E", "F", "W", "I", "B", "UP"]
